@@ -1,0 +1,128 @@
+{
+  "0": {
+    "lv": 0,
+    "integral": 0,
+    "totalintegral": 0,
+    "redenvelope": 10
+  },
+  "1": {
+    "lv": 1,
+    "integral": 1000,
+    "totalintegral": 1000,
+    "redenvelope": 11
+  },
+  "2": {
+    "lv": 2,
+    "integral": 4000,
+    "totalintegral": 5000,
+    "redenvelope": 12
+  },
+  "3": {
+    "lv": 3,
+    "integral": 8000,
+    "totalintegral": 13000,
+    "redenvelope": 13
+  },
+  "4": {
+    "lv": 4,
+    "integral": 13000,
+    "totalintegral": 26000,
+    "redenvelope": 14
+  },
+  "5": {
+    "lv": 5,
+    "integral": 19000,
+    "totalintegral": 45000,
+    "redenvelope": 15
+  },
+  "6": {
+    "lv": 6,
+    "integral": 26000,
+    "totalintegral": 71000,
+    "redenvelope": 16
+  },
+  "7": {
+    "lv": 7,
+    "integral": 34000,
+    "totalintegral": 105000,
+    "redenvelope": 17
+  },
+  "8": {
+    "lv": 8,
+    "integral": 43000,
+    "totalintegral": 148000,
+    "redenvelope": 18
+  },
+  "9": {
+    "lv": 9,
+    "integral": 53000,
+    "totalintegral": 201000,
+    "redenvelope": 19
+  },
+  "10": {
+    "lv": 10,
+    "integral": 64000,
+    "totalintegral": 265000,
+    "redenvelope": 20
+  },
+  "11": {
+    "lv": 11,
+    "integral": 76000,
+    "totalintegral": 341000,
+    "redenvelope": 21
+  },
+  "12": {
+    "lv": 12,
+    "integral": 89000,
+    "totalintegral": 430000,
+    "redenvelope": 22
+  },
+  "13": {
+    "lv": 13,
+    "integral": 103000,
+    "totalintegral": 533000,
+    "redenvelope": 23
+  },
+  "14": {
+    "lv": 14,
+    "integral": 118000,
+    "totalintegral": 651000,
+    "redenvelope": 24
+  },
+  "15": {
+    "lv": 15,
+    "integral": 134000,
+    "totalintegral": 785000,
+    "redenvelope": 25
+  },
+  "16": {
+    "lv": 16,
+    "integral": 151000,
+    "totalintegral": 936000,
+    "redenvelope": 26
+  },
+  "17": {
+    "lv": 17,
+    "integral": 169000,
+    "totalintegral": 1105000,
+    "redenvelope": 27
+  },
+  "18": {
+    "lv": 18,
+    "integral": 188000,
+    "totalintegral": 1293000,
+    "redenvelope": 28
+  },
+  "19": {
+    "lv": 19,
+    "integral": 208000,
+    "totalintegral": 1501000,
+    "redenvelope": 29
+  },
+  "20": {
+    "lv": 20,
+    "integral": 229000,
+    "totalintegral": 1730000,
+    "redenvelope": 30
+  }
+}

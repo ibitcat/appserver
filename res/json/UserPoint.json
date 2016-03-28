@@ -1,0 +1,26 @@
+{
+  "1": {
+    "bh": 1,
+    "taskname": "登录谢谢老板",
+    "dailylimit": 5,
+    "singleintegral": 10
+  },
+  "2": {
+    "bh": 2,
+    "taskname": "红包任务",
+    "dailylimit": 0,
+    "singleintegral": 10
+  },
+  "3": {
+    "bh": 3,
+    "taskname": "邀请好友",
+    "dailylimit": 5,
+    "singleintegral": 5
+  },
+  "4": {
+    "bh": 4,
+    "taskname": "成功邀请好友注册",
+    "dailylimit": 0,
+    "singleintegral": 500
+  }
+}
