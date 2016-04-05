@@ -4,6 +4,7 @@
 
 //参考skynet：https://github.com/cloudwu/skynet/blob/master/skynet-src/skynet_timer.c
 http://blog.csdn.net/yueguanghaidao/article/details/46290539
+skynet 定时器源码接卸：http://www.tuicool.com/articles/qui2ia
 */
 
 package timer
@@ -67,6 +68,7 @@ func NewTimer(d time.Duration) *Timer {
 func (t *Timer) addNode(n *Node) {
 	expire := n.expire
 	current := t.time
+	// expire | TIME_NEAR_MASK 是为了把时间差值范围固定到 0-255之间
 	if (expire | TIME_NEAR_MASK) == (current | TIME_NEAR_MASK) {
 		fmt.Println("near-------", n)
 		t.near[expire&TIME_NEAR_MASK].PushBack(n)
@@ -91,7 +93,7 @@ func (t *Timer) AddTimer(d time.Duration, f func()) *Node {
 	n := new(Node)
 	n.f = f
 	t.Lock()
-	n.expire = uint32(d/t.tick) + t.time
+	n.expire = uint32(d/t.tick) + t.time // 这里表示需要几个tick，把d换算成tick数量
 	t.addNode(n)
 	t.Unlock()
 	return n
@@ -120,22 +122,22 @@ func (t *Timer) moveList(level, idx int) {
 
 func (t *Timer) shift() {
 	t.Lock()
-	var mask uint32 = TIME_NEAR
+	var mask uint32 = TIME_NEAR //256
 	t.time++
 	ct := t.time
 	if ct == 0 {
 		t.moveList(3, 0)
 	} else {
-		time := ct >> TIME_NEAR_SHIFT
+		time := ct >> TIME_NEAR_SHIFT // 这里除以256，例如 515/256=2(取整了)，表示有多少个最小轮
 		var i int = 0
-		for (ct & (mask - 1)) == 0 {
-			idx := int(time & TIME_LEVEL_MASK)
-			if idx != 0 {
+		for (ct & (mask - 1)) == 0 { // 这里是模256，等于0表示可以整除，例如 515%256=3
+			idx := int(time & TIME_LEVEL_MASK) // 模64
+			if idx != 0 {                      // 如果这里等于，表示time圈数能被64整除，也就是说，总流逝的tick数把第一级的槽数都填满了，需要再找上一级的
 				t.moveList(i, idx)
 				break
 			}
-			mask <<= TIME_LEVEL_SHIFT
-			time >>= TIME_LEVEL_SHIFT
+			mask <<= TIME_LEVEL_SHIFT // mask再乘以64
+			time >>= TIME_LEVEL_SHIFT // 圈数再除以2^6=64
 			i++
 		}
 	}
