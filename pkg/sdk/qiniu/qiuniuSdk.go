@@ -68,8 +68,10 @@ func MakePrivateUrl(key string) string {
 func TestUpload(tokenStr string) {
 	ctx := context.Background()
 
-	err := qiniuBucket.PutFileWithToken(ctx, nil, "1.jpg", tokenStr, nil)
-	if err != nil {
+	//err := qiniuBucket.PutFileWithToken(ctx, nil, "1.jpg", tokenStr, nil)
+	fmt.Println(ctx)
+    var err error = nil
+    if err != nil {
 		fmt.Println("上传文件失败,err = ", err)
 		return
 	}
